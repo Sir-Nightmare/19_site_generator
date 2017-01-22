@@ -45,7 +45,7 @@ if __name__ == '__main__':
     config = get_config_from_json()
     articles = config['articles']
     ensure_dir_exists(SITE_ROOT_FOLDER)
-    jin_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    jin_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), autoescape=True)
     article_template = jin_env.get_template(ARTICLE_TEMPLATE_PATH)
     index_file_path = '{}{}'.format(SITE_ROOT_FOLDER, INDEX_FILE)
     link_article_to_index = '{}{}'.format('../', INDEX_FILE)

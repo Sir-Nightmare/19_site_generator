@@ -19,7 +19,7 @@
                     <ul type="disc">
                         {% for article in articles %}
                             {% if article['topic']==topic['slug'] %}
-                                <li><a href="{{form_article_path(article['source'])|e}}">{{article['title']|e}}</a></li>
+                                <li><a href="{{form_article_path(article['source'])}}">{{article['title']}}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>
