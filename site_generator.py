@@ -7,6 +7,7 @@ SITE_ROOT_FOLDER = './docs/'
 ARTICLE_ROOT_FOLDER = './articles/'
 INDEX_TEMPLATE_PATH = 'templates/index_template.html'
 ARTICLE_TEMPLATE_PATH = 'templates/article_template.html'
+INDEX_FILE = 'index.html'
 
 
 def ensure_dir_exists(path):
@@ -24,9 +25,10 @@ def get_config_from_json():
         return json.load(json_data_file)
 
 
-def convert_markdown_to_html(template, file_info, article_title, topic):
+def convert_markdown_to_html(template, file_info, article_title, topic, index_file_path):
     html_text = markdown(file_info, extensions=['codehilite', 'fenced_code'])
-    data_to_render = {'html': html_text, 'title': article_title, 'topic': topic}
+    data_to_render = {'html': html_text, 'title': article_title, 'topic': topic,
+                      'link': '../index.html'}
     return template.render(data_to_render)
 
 
@@ -45,11 +47,13 @@ if __name__ == '__main__':
     ensure_dir_exists(SITE_ROOT_FOLDER)
     article_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
     article_template = article_env.get_template(ARTICLE_TEMPLATE_PATH)
+    index_file_path = '{}{}'.format(SITE_ROOT_FOLDER, INDEX_FILE)
+    link_article_to_index = '{}{}'.format('../', INDEX_FILE)
     for article in articles:
         source = article['source']
         file_info = open_file('{}{}'.format(ARTICLE_ROOT_FOLDER, source))
         html_article = convert_markdown_to_html(article_template, file_info, article['title'],
-                                                article['topic'])
+                                                article['topic'], link_article_to_index)
         path_to_save_html = '{}{}'.format(SITE_ROOT_FOLDER, form_path_to_html_file(source))
         ensure_dir_exists(os.path.split(path_to_save_html)[0])
         save_html_file(html_article, path_to_save_html)
@@ -57,4 +61,4 @@ if __name__ == '__main__':
     index_template = index_env.get_template(INDEX_TEMPLATE_PATH)
     index_template.globals['form_article_path'] = form_path_to_html_file
     result_html = index_template.render(topics=config['topics'], articles=articles)
-    save_html_file(result_html, '{}{}'.format(SITE_ROOT_FOLDER, 'index.html'))
+    save_html_file(result_html, index_file_path)
