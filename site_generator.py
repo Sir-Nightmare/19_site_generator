@@ -25,9 +25,9 @@ def get_config_from_json():
 
 
 def convert_markdown_to_html(template, file_info, article_title, topic):
-    html = markdown(file_info, extensions=['codehilite', 'fenced_code'])
-    data = {'html': html, 'title': article_title, 'topic': topic}
-    return template.render(data)
+    html_text = markdown(file_info, extensions=['codehilite', 'fenced_code'])
+    data_to_render = {'html': html_text, 'title': article_title, 'topic': topic}
+    return template.render(data_to_render)
 
 
 def save_html_file(html_text, path_to_save):
@@ -43,8 +43,8 @@ if __name__ == '__main__':
     config = get_config_from_json()
     articles = config['articles']
     ensure_dir_exists(SITE_ROOT_FOLDER)
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
-    article_template = env.get_template(ARTICLE_TEMPLATE_PATH)
+    jin_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    article_template = jin_env.get_template(ARTICLE_TEMPLATE_PATH)
     for article in articles:
         source = article['source']
         file_info = open_file('{}{}'.format(ARTICLE_ROOT_FOLDER, source))
@@ -53,7 +53,7 @@ if __name__ == '__main__':
         path_to_save_html = '{}{}'.format(SITE_ROOT_FOLDER, form_path_to_html_file(source))
         ensure_dir_exists(os.path.split(path_to_save_html)[0])
         save_html_file(html_article, path_to_save_html)
-    index_template = env.get_template(INDEX_TEMPLATE_PATH)
+    index_template = jin_env.get_template(INDEX_TEMPLATE_PATH)
     index_template.globals['form_article_path'] = form_path_to_html_file
     result_html = index_template.render(topics=config['topics'], articles=articles)
     save_html_file(result_html, '{}{}'.format(SITE_ROOT_FOLDER, 'index.html'))
