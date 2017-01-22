@@ -17,90 +17,90 @@
 		    <div>		
 			    <span class="label label-primary">python_basics</span>
 		    </div>			
-		</div>
+	</div>
 	    <div style="height: 20px;">
 		</div>
 		<div class="container">
-			&lt;h3&gt;Коротко о главных управляющих конструкциях&lt;/h3&gt;
-&lt;p&gt;Сейчас мы совсем реактивно пройдёмся по самым основным управляющим конструкциям. Гет реди.&lt;/p&gt;
-&lt;h3&gt;if&lt;/h3&gt;
-&lt;p&gt;Ну, вы все знаете условный оператор, так ведь?&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;age&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Никаких тебе сигарет. Ишь чего удумал!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Вам синий или красный?&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+			<h3>Коротко о главных управляющих конструкциях</h3>
+<p>Сейчас мы совсем реактивно пройдёмся по самым основным управляющим конструкциям. Гет реди.</p>
+<h3>if</h3>
+<p>Ну, вы все знаете условный оператор, так ведь?</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Никаких тебе сигарет. Ишь чего удумал!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Вам синий или красный?&#39;</span><span class="p">)</span>
+</pre></div>
 
 
-&lt;p&gt;Есть ещё &lt;code&gt;elif&lt;/code&gt;, их можно сделать много в одном операторе. Это такой аналог &lt;code&gt;which&lt;/code&gt; из других языков.&lt;/p&gt;
-&lt;h3&gt;for&lt;/h3&gt;
-&lt;p&gt;Цикл. Вместо сишного варианта с init, cond и loop выражениями, тут просто итерация по коллекции:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;users&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>Есть ещё <code>elif</code>, их можно сделать много в одном операторе. Это такой аналог <code>which</code> из других языков.</p>
+<h3>for</h3>
+<p>Цикл. Вместо сишного варианта с init, cond и loop выражениями, тут просто итерация по коллекции:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">user</span>
+</pre></div>
 
 
-&lt;p&gt;Иногда надо не пройтись по списку, а выполнить одну и ту же операцию много раз. Тогда хорошо подходит функция
-&lt;a href=&#34;https://docs.python.org/3.5/library/functions.html#func-range&#34;&gt;range&lt;/a&gt;. Она возвращает целые числа в заданном промежутке,
-поэтому в цикле её можно использовать так:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;level_num&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;levelup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# пользователь получит десять уровней. Читер!&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>Иногда надо не пройтись по списку, а выполнить одну и ту же операцию много раз. Тогда хорошо подходит функция
+<a href="https://docs.python.org/3.5/library/functions.html#func-range">range</a>. Она возвращает целые числа в заданном промежутке,
+поэтому в цикле её можно использовать так:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">level_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">levelup</span><span class="p">()</span>  <span class="c1"># пользователь получит десять уровней. Читер!</span>
+</pre></div>
 
 
-&lt;p&gt;А вот &lt;code&gt;break&lt;/code&gt; и &lt;code&gt;continue&lt;/code&gt; делают то же, что в Паскале и Сях. &lt;code&gt;break&lt;/code&gt; прерывает выполнение цикла,
-&lt;code&gt;continue&lt;/code&gt; завершает текущую итерацию и переходит к следующей.&lt;/p&gt;
-&lt;p&gt;Ещё у цикла есть &lt;code&gt;else&lt;/code&gt;, но про него почти никто не знает. Как он работает можно посмотреть
-&lt;a href=&#34;https://docs.python.org/3.5/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops&#34;&gt;в официальной документации&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;def&lt;/h3&gt;
-&lt;p&gt;Начало объявления функции. После него идёт название,
-потом – аргументы функции в скобках, двоеточие и тело функции с отступом:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;get_square&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;**&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>А вот <code>break</code> и <code>continue</code> делают то же, что в Паскале и Сях. <code>break</code> прерывает выполнение цикла,
+<code>continue</code> завершает текущую итерацию и переходит к следующей.</p>
+<p>Ещё у цикла есть <code>else</code>, но про него почти никто не знает. Как он работает можно посмотреть
+<a href="https://docs.python.org/3.5/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops">в официальной документации</a>.</p>
+<h3>def</h3>
+<p>Начало объявления функции. После него идёт название,
+потом – аргументы функции в скобках, двоеточие и тело функции с отступом:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_square</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
 
 
-&lt;p&gt;То, что после &lt;code&gt;return&lt;/code&gt; – это возвращаемое значение функции.&lt;/p&gt;
-&lt;p&gt;Функцию создали, вот как её теперь использовать:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_square&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 4&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_square&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 36&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_square&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ыыы&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# всё сломается&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>То, что после <code>return</code> – это возвращаемое значение функции.</p>
+<p>Функцию создали, вот как её теперь использовать:</p>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">get_square</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># 4</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_square</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># 36</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_square</span><span class="p">(</span><span class="s1">&#39;ыыы&#39;</span><span class="p">))</span>  <span class="c1"># всё сломается</span>
+</pre></div>
 
 
-&lt;p&gt;А вот пример посложнее, из исходников Девмана. Получает пользователя по айди в Слаке:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;_get_user_by_slack_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;slack_user_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;user_email&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;get_slack_email_for_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;slack_user_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;objects&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;email__iexact&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user_email&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>А вот пример посложнее, из исходников Девмана. Получает пользователя по айди в Слаке:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">_get_user_by_slack_id</span><span class="p">(</span><span class="n">slack_user_id</span><span class="p">):</span>
+    <span class="n">user_email</span> <span class="o">=</span> <span class="n">get_slack_email_for_user</span><span class="p">(</span><span class="n">slack_user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">email__iexact</span><span class="o">=</span><span class="n">user_email</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</pre></div>
 
 
-&lt;p&gt;(вот почему емейл необходим)&lt;/p&gt;
-&lt;h3&gt;range&lt;/h3&gt;
-&lt;p&gt;Функция очень полезная, поэтому про неё отдельно. &lt;code&gt;range&lt;/code&gt; генерирует целые числа в заданном диапазоне. Например:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 0..0&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 5..9&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# [5, 7, 9] (от пяти до девяти с шагом два)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>(вот почему емейл необходим)</p>
+<h3>range</h3>
+<p>Функция очень полезная, поэтому про неё отдельно. <code>range</code> генерирует целые числа в заданном диапазоне. Например:</p>
+<div class="codehilite"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 0..0</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 5..9</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># [5, 7, 9] (от пяти до девяти с шагом два)</span>
+</pre></div>
 
 
-&lt;p&gt;Фишка этой функции заключается в том, что она не создаёт список со всеми числами.
+<p>Фишка этой функции заключается в том, что она не создаёт список со всеми числами.
 Вместо этого он вернёт объект, который будет возвращать элементы как только они нужны, по одному.
-Поэтому код &lt;code&gt;range(9999999999999)&lt;/code&gt; не съест всю память.
-Этот хитрый объект (Sequence ABC, но об этом потом) можно превратить в список явно:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9999999999999&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+Поэтому код <code>range(9999999999999)</code> не съест всю память.
+Этот хитрый объект (Sequence ABC, но об этом потом) можно превратить в список явно:</p>
+<div class="codehilite"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9999999999999</span><span class="p">))</span>
+</pre></div>
 
 
-&lt;p&gt;(не советую так делать)&lt;/p&gt;
-&lt;h3&gt;pass&lt;/h3&gt;
-&lt;p&gt;Блок, который ничего не делает:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;pass&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 20 раз сделать ничего. Очень полезно!&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<p>(не советую так делать)</p>
+<h3>pass</h3>
+<p>Блок, который ничего не делает:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># 20 раз сделать ничего. Очень полезно!</span>
+</pre></div>
 
 
-&lt;p&gt;Часто используется в начальном коде для заданий: в финальной версии вместо &lt;code&gt;pass&lt;/code&gt; должен быть настоящий код.&lt;/p&gt;
+<p>Часто используется в начальном коде для заданий: в финальной версии вместо <code>pass</code> должен быть настоящий код.</p>
 			<a class="btn btn-default" href="../index.html" role="button">К оглавлению</a>
 		</div>
 		
