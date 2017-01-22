@@ -1,0 +1,40 @@
+<!DOCTYPE html<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Энциклопедия</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <style>
+            .container{
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="text-center">Энциклопедия Devman</h2>
+			<hr>
+            {% for topic in topics %}
+                <div class="col-md-3">
+                    <h3><strong>{{topic['title']}}</strong></h3>
+                    <ul type="disc">
+                        {% for article in articles %}
+                            {% if article['topic']==topic['slug'] %}
+                                <li><a href="{{form_article_path(article['source'])}}">{{article['title']}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+		<div style="height: 60px">
+		</div>
+		<nav class="navbar navbar-default navbar-small navbar-fixed-bottom">
+			<div class="container">
+				<div class="col-sm-12 text-center navbar-text">
+					 Made by <a href="https://github.com/Sir-Nightmare">Sir Nightmare</a>
+					— <a href="https://devman.org/">Devman</a>
+				</div>
+			</div>
+		</nav>
+    </body>
+</html>
