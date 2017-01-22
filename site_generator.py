@@ -43,7 +43,7 @@ if __name__ == '__main__':
     config = get_config_from_json()
     articles = config['articles']
     ensure_dir_exists(SITE_ROOT_FOLDER)
-    jin_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    jin_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), autoescape=True)
     article_template = jin_env.get_template(ARTICLE_TEMPLATE_PATH)
     for article in articles:
         source = article['source']

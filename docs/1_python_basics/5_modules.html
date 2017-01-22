@@ -21,145 +21,145 @@
 	    <div style="height: 20px;">
 		</div>
 		<div class="container">
-			<h3>Что это такое</h3>
-<p>Модуль – кусок кода, который можно использовать в другом коде. В самом простом случае это файл.
-В любом проекте функциональность разбивается на куски, каждый кусок селится в свой модуль.</p>
-<p>Всё, что устанавливается с помощью pip, представляет собой модули. Модули иерархические:
-ты можешь импортировать модуль <code>markdown</code> и пользоваться им, не зная, что внутри он импортирует
-ещё десяток других модулей: Питон сам всё разрулит.</p>
-<h3>Как этим пользоваться</h3>
-<p>Имя модуля совпадает с именем файла и должно быть нормальным именем переменной в Питоне: например, не содержать
-знаков минуса.</p>
-<p>Предположим, что есть папка <code>3_bars</code>, в ней файл <code>data_loaders.py</code> с таким содержанием:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-<span class="kn">import</span> <span class="nn">json</span>
+			&lt;h3&gt;Что это такое&lt;/h3&gt;
+&lt;p&gt;Модуль – кусок кода, который можно использовать в другом коде. В самом простом случае это файл.
+В любом проекте функциональность разбивается на куски, каждый кусок селится в свой модуль.&lt;/p&gt;
+&lt;p&gt;Всё, что устанавливается с помощью pip, представляет собой модули. Модули иерархические:
+ты можешь импортировать модуль &lt;code&gt;markdown&lt;/code&gt; и пользоваться им, не зная, что внутри он импортирует
+ещё десяток других модулей: Питон сам всё разрулит.&lt;/p&gt;
+&lt;h3&gt;Как этим пользоваться&lt;/h3&gt;
+&lt;p&gt;Имя модуля совпадает с именем файла и должно быть нормальным именем переменной в Питоне: например, не содержать
+знаков минуса.&lt;/p&gt;
+&lt;p&gt;Предположим, что есть папка &lt;code&gt;3_bars&lt;/code&gt;, в ней файл &lt;code&gt;data_loaders.py&lt;/code&gt; с таким содержанием:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;csv&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;json&lt;/span&gt;
 
 
-<span class="k">def</span> <span class="nf">load_from_json</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handler</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;load_from_json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
 
-<span class="k">def</span> <span class="nf">load_from_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handler</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file_handler</span><span class="p">))</span>
-</pre></div>
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;load_from_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;csv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;reader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>А рядом есть файл <code>bars.py</code>, в котором мы хотим загрузить данные из csv. Вот что в нём можно написать:</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">data_loaders</span> <span class="kn">import</span> <span class="n">load_from_csv</span>  <span class="c1"># импортируем функцию из модуля</span>
+&lt;p&gt;А рядом есть файл &lt;code&gt;bars.py&lt;/code&gt;, в котором мы хотим загрузить данные из csv. Вот что в нём можно написать:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;data_loaders&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;load_from_csv&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# импортируем функцию из модуля&lt;/span&gt;
 
 
-<span class="k">print</span><span class="p">(</span><span class="n">load_from_csv</span><span class="p">(</span><span class="s1">&#39;bars.csv&#39;</span><span class="p">)</span>
-</pre></div>
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_from_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bars.csv&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>А можно так:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">data_loaders</span>  <span class="c1"># импортируем модуль целиком</span>
+&lt;p&gt;А можно так:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;data_loaders&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# импортируем модуль целиком&lt;/span&gt;
 
 
-<span class="k">print</span><span class="p">(</span><span class="n">data_loaders</span><span class="o">.</span><span class="n">load_from_csv</span><span class="p">(</span><span class="s1">&#39;bars.csv&#39;</span><span class="p">)</span>  <span class="c1"># используем функцию с указанием модуля</span>
-</pre></div>
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data_loaders&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_from_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bars.csv&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# используем функцию с указанием модуля&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>Есть ещё вариант <code>from data_loaders import *</code>, но он вне закона. Забудьте о нём.</p>
-<h3>Запуск модуля как скрипта</h3>
-<p>Когда Питон видит <code>import data_loaders</code>, он находит файл <code>data_loaders.py</code> и выполняет его. Реально выполняет:
+&lt;p&gt;Есть ещё вариант &lt;code&gt;from data_loaders import *&lt;/code&gt;, но он вне закона. Забудьте о нём.&lt;/p&gt;
+&lt;h3&gt;Запуск модуля как скрипта&lt;/h3&gt;
+&lt;p&gt;Когда Питон видит &lt;code&gt;import data_loaders&lt;/code&gt;, он находит файл &lt;code&gt;data_loaders.py&lt;/code&gt; и выполняет его. Реально выполняет:
 если в нём есть код, он будет выполнен. Даже если это не просто объявления функций, а их вызов. Представим,
-что когда мы писали код в <code>data_loaders.py</code>, мы его дебажили. Например, так:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+что когда мы писали код в &lt;code&gt;data_loaders.py&lt;/code&gt;, мы его дебажили. Например, так:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;json&lt;/span&gt;
 
 
-<span class="k">def</span> <span class="nf">load_from_json</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handler</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;load_from_json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
 
-<span class="k">print</span><span class="p">(</span><span class="n">load_from_json</span><span class="p">(</span><span class="s1">&#39;test.json&#39;</span><span class="p">))</span>
-</pre></div>
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_from_json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;test.json&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>Теперь если мы импортируем этот модуль (<code>import data_loaders</code>), девятая строка выполнится, файл загрузится и выведется
-на экран. А ведь в <code>bars.py</code> это не нужно! Можно этот код удалить, но тогда будет неудобно дорабатывать функцию
-<code>load_from_json</code>: при изменении надо будет добавлять отладочный принт, а потом удалять.</p>
-<p>Вот правильный способ это обойти:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+&lt;p&gt;Теперь если мы импортируем этот модуль (&lt;code&gt;import data_loaders&lt;/code&gt;), девятая строка выполнится, файл загрузится и выведется
+на экран. А ведь в &lt;code&gt;bars.py&lt;/code&gt; это не нужно! Можно этот код удалить, но тогда будет неудобно дорабатывать функцию
+&lt;code&gt;load_from_json&lt;/code&gt;: при изменении надо будет добавлять отладочный принт, а потом удалять.&lt;/p&gt;
+&lt;p&gt;Вот правильный способ это обойти:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;json&lt;/span&gt;
 
 
-<span class="k">def</span> <span class="nf">load_from_json</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handler</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;load_from_json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">load_from_json</span><span class="p">(</span><span class="s1">&#39;test.json&#39;</span><span class="p">))</span>
-</pre></div>
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_from_json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;test.json&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>Иф на девятой строке значит "выполняй меня только если файл запущен напрямую, а не импортирован".
-Теперь при запуске <code>python data_loaders.py</code> будет выполняться дебажная загрузка кода, а
-при импорте этого модуля – не будет. То, что надо.</p>
-<p><code>__main__</code> – одна из переменных магических переменных. Их можно узнать по двойным подчёркиваниям по краям.
-Такие переменные доступны всегда и Питон запишет нужные значения в них за нас. В <code>__main__</code> хранится название модуля,
+&lt;p&gt;Иф на девятой строке значит &#34;выполняй меня только если файл запущен напрямую, а не импортирован&#34;.
+Теперь при запуске &lt;code&gt;python data_loaders.py&lt;/code&gt; будет выполняться дебажная загрузка кода, а
+при импорте этого модуля – не будет. То, что надо.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;__main__&lt;/code&gt; – одна из переменных магических переменных. Их можно узнать по двойным подчёркиваниям по краям.
+Такие переменные доступны всегда и Питон запишет нужные значения в них за нас. В &lt;code&gt;__main__&lt;/code&gt; хранится название модуля,
 из которого был импортирован данный модуль. Если модуль выполняется напрямую, Питон запишет в эту переменную
-значение <code>__main__</code> (<a href="https://docs.python.org/3/library/__main__.html">доки</a>). Хитро, а?</p>
-<h3>Подводные камни</h3>
-<p>Главный подводный камень – рекурсивный импорт. Это если мы импортируем <code>data_loaders</code> из <code>bars</code>, а для <code>data_loaders</code>
-нужен <code>bars</code>. Вот так:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># bars.py</span>
-<span class="kn">import</span> <span class="nn">data_loaders</span>
+значение &lt;code&gt;__main__&lt;/code&gt; (&lt;a href=&#34;https://docs.python.org/3/library/__main__.html&#34;&gt;доки&lt;/a&gt;). Хитро, а?&lt;/p&gt;
+&lt;h3&gt;Подводные камни&lt;/h3&gt;
+&lt;p&gt;Главный подводный камень – рекурсивный импорт. Это если мы импортируем &lt;code&gt;data_loaders&lt;/code&gt; из &lt;code&gt;bars&lt;/code&gt;, а для &lt;code&gt;data_loaders&lt;/code&gt;
+нужен &lt;code&gt;bars&lt;/code&gt;. Вот так:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# bars.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;data_loaders&lt;/span&gt;
 
-<span class="c1"># data_loaders.py</span>
-<span class="kn">import</span> <span class="nn">bars</span>
-</pre></div>
-
-
-<p>Бах! Всё сломается при запуске.</p>
-<p>Иногда бывает ещё веселее: когда импорты замыкаются в трёх и более файлах. Типа того:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># bars.py</span>
-<span class="kn">import</span> <span class="nn">data_loaders</span>
-
-<span class="c1"># data_loaders.py</span>
-<span class="kn">import</span> <span class="nn">helpers</span>
-
-<span class="c1"># helpers.py</span>
-<span class="kn">import</span> <span class="nn">bars</span>
-</pre></div>
+&lt;span class=&#34;c1&#34;&gt;# data_loaders.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;bars&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>Всё сломается так же, как в примере выше, но ещё и заставит поломать голову при починке.</p>
-<p>Чинить такие случаи просто: разбивать код на максимально независимые модули. В примере выше, например,
-файлу <code>helpers.py</code> зачем-то нужен <code>bars.py</code>. Так быть не должно: в <code>helpers.py</code> должны жить
-максимально независимые общие функции, которые используются в других файлах. Не наоборот.</p>
-<h3>Как работает под капотом</h3>
-<p>Важнее всего знать, как Питон выбирает файлы для импорта. Сначала он ищет подходящие файлы в рабочей директории,
-рядом с <code>bars.py</code>. Если не находит, то проходит по папкам в <code>sys.path</code> и ищет нужный файл.</p>
-<p>Иногда бывает так, что нужный модуль находится вне тех папок, которые обходит Питон. Один из вариантов побороть это
- – вручную добавить нужный путь в <code>sys.path</code> (это список). Но это на крайний случай, обычно есть более красивые способы.
-Например, упаковать код в модуль и установить его с помощью pip. Так что тсс, я вам ничего не говорил.</p>
-<p>В памяти все загруженные модули хранятся в <code>sys.modules</code>. Иногда встречаются случаи, когда файла нет, а модуль есть.
-Это не сложно устроить:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># mod.py</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">ModuleType</span>
+&lt;p&gt;Бах! Всё сломается при запуске.&lt;/p&gt;
+&lt;p&gt;Иногда бывает ещё веселее: когда импорты замыкаются в трёх и более файлах. Типа того:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# bars.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;data_loaders&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# data_loaders.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;helpers&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# helpers.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;bars&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<span class="n">dynamic_module</span> <span class="o">=</span> <span class="n">ModuleType</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="n">dynamic_module</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+&lt;p&gt;Всё сломается так же, как в примере выше, но ещё и заставит поломать голову при починке.&lt;/p&gt;
+&lt;p&gt;Чинить такие случаи просто: разбивать код на максимально независимые модули. В примере выше, например,
+файлу &lt;code&gt;helpers.py&lt;/code&gt; зачем-то нужен &lt;code&gt;bars.py&lt;/code&gt;. Так быть не должно: в &lt;code&gt;helpers.py&lt;/code&gt; должны жить
+максимально независимые общие функции, которые используются в других файлах. Не наоборот.&lt;/p&gt;
+&lt;h3&gt;Как работает под капотом&lt;/h3&gt;
+&lt;p&gt;Важнее всего знать, как Питон выбирает файлы для импорта. Сначала он ищет подходящие файлы в рабочей директории,
+рядом с &lt;code&gt;bars.py&lt;/code&gt;. Если не находит, то проходит по папкам в &lt;code&gt;sys.path&lt;/code&gt; и ищет нужный файл.&lt;/p&gt;
+&lt;p&gt;Иногда бывает так, что нужный модуль находится вне тех папок, которые обходит Питон. Один из вариантов побороть это
+ – вручную добавить нужный путь в &lt;code&gt;sys.path&lt;/code&gt; (это список). Но это на крайний случай, обычно есть более красивые способы.
+Например, упаковать код в модуль и установить его с помощью pip. Так что тсс, я вам ничего не говорил.&lt;/p&gt;
+&lt;p&gt;В памяти все загруженные модули хранятся в &lt;code&gt;sys.modules&lt;/code&gt;. Иногда встречаются случаи, когда файла нет, а модуль есть.
+Это не сложно устроить:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# mod.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;types&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ModuleType&lt;/span&gt;
 
-<span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s1">&#39;some_weird_module&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dynamic_module</span>
+
+&lt;span class=&#34;n&#34;&gt;dynamic_module&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ModuleType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;dynamic_module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;sys&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;modules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;some_weird_module&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dynamic_module&lt;/span&gt;
 
 
-<span class="c1"># script.py</span>
-<span class="kn">import</span> <span class="nn">mod</span>  <span class="c1"># тут выполнился код из mod.py</span>
-<span class="kn">import</span> <span class="nn">some_weird_module</span>  <span class="c1"># модуль есть, а файла – нет</span>
+&lt;span class=&#34;c1&#34;&gt;# script.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;mod&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# тут выполнился код из mod.py&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;some_weird_module&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# модуль есть, а файла – нет&lt;/span&gt;
 
 
-<span class="k">print</span><span class="p">(</span><span class="n">some_weird_module</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 5</span>
-</pre></div>
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;some_weird_module&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 5&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-<p>Делать так незаконно: это неочевидно, затрудняет отладку и вредит читаемости. Не надо так.</p>
+&lt;p&gt;Делать так незаконно: это неочевидно, затрудняет отладку и вредит читаемости. Не надо так.&lt;/p&gt;
 			<a class="btn btn-default" href="../index.html" role="button">К оглавлению</a>
 		</div>
 		
