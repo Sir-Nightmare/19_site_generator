@@ -2,7 +2,7 @@
 
 This script converts `*.md` files into html files and creates static site using Markdown converter + Jinja2 templates.
 Index page with all links is generated.  
-[Here](https://google.com) you can see generated site.
+[Here](https://sir-nightmare.github.io/19_site_generator/) you can see generated site.
 
 ## Usage
 
