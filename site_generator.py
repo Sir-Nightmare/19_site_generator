@@ -43,8 +43,8 @@ if __name__ == '__main__':
     config = get_config_from_json()
     articles = config['articles']
     ensure_dir_exists(SITE_ROOT_FOLDER)
-    jin_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), autoescape=True)
-    article_template = jin_env.get_template(ARTICLE_TEMPLATE_PATH)
+    article_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    article_template = article_env.get_template(ARTICLE_TEMPLATE_PATH)
     for article in articles:
         source = article['source']
         file_info = open_file('{}{}'.format(ARTICLE_ROOT_FOLDER, source))
@@ -53,7 +53,8 @@ if __name__ == '__main__':
         path_to_save_html = '{}{}'.format(SITE_ROOT_FOLDER, form_path_to_html_file(source))
         ensure_dir_exists(os.path.split(path_to_save_html)[0])
         save_html_file(html_article, path_to_save_html)
-    index_template = jin_env.get_template(INDEX_TEMPLATE_PATH)
+    index_env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), autoescape=True)
+    index_template = index_env.get_template(INDEX_TEMPLATE_PATH)
     index_template.globals['form_article_path'] = form_path_to_html_file
     result_html = index_template.render(topics=config['topics'], articles=articles)
     save_html_file(result_html, '{}{}'.format(SITE_ROOT_FOLDER, 'index.html'))
