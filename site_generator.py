@@ -3,6 +3,7 @@ import json
 import os
 from markdown import markdown
 
+
 SITE_ROOT_FOLDER = './docs/'
 ARTICLE_ROOT_FOLDER = './articles/'
 INDEX_TEMPLATE_PATH = 'templates/index_template.html'
@@ -38,6 +39,7 @@ def save_html_file(html_text, path_to_save):
 
 
 def form_path_to_html_file(markdown_path):
+    print(markdown_path)
     return markdown_path.replace('.md', '.html')
 
 
