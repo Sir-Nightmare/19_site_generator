@@ -12,7 +12,7 @@ Index page with all links is generated.
 
 By default script will generate `*.html` files from `*.md` files from `./articles/` folder using **config.json**.  
 If you add new `*.md` files, you need to change **config.json** accordingly.  
-All files will be stored in `./site/` folder, which is used by GitHub Pages.  
+All files will be stored in `./docs/` folder, which is used by GitHub Pages.  
 You can change default paths in script global constants.
 
 # Project Goals
